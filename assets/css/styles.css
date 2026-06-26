@@ -32,8 +32,8 @@
   /* --- type --- */
   --mono:'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
   --sans:'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  --fs-display:clamp(3rem, 7.4vw, 6.5rem);
-  --fs-h2:clamp(1.8rem, 3.8vw, 3.1rem);
+  --fs-display:clamp(2.4rem, 5.2vw, 4.25rem);
+  --fs-h2:clamp(1.5rem, 2.9vw, 2.25rem);
   --fs-h3:clamp(1.05rem, 1.5vw, 1.22rem);
 
   /* --- motion tokens (locked to brief) --- */
@@ -78,12 +78,12 @@ ul{list-style:none;padding:0}
   background-size:clamp(54px,7vw,92px) clamp(54px,7vw,92px);
   -webkit-mask-image:radial-gradient(135% 100% at 50% 0%, #000 45%, transparent 92%);
           mask-image:radial-gradient(135% 100% at 50% 0%, #000 45%, transparent 92%);
-  opacity:.7;
+  opacity:.35;
 }
 .layer--glow{overflow:hidden}
 .layer--glow::before,.layer--glow::after{
   content:'';position:absolute;width:54vw;height:54vw;border-radius:50%;
-  filter:blur(110px);opacity:.4;will-change:transform;
+  filter:blur(110px);opacity:.12;will-change:transform;
 }
 .layer--glow::before{top:-16vw;left:-8vw;
   background:radial-gradient(circle, rgba(255,200,1,.38), transparent 62%);
@@ -93,20 +93,6 @@ ul{list-style:none;padding:0}
   animation:drift2 34s ease-in-out infinite alternate}
 @keyframes drift1{to{transform:translate3d(5vw,3vw,0) scale(1.12)}}
 @keyframes drift2{to{transform:translate3d(-4vw,-3vw,0) scale(1.1)}}
-.layer--dots{opacity:.55;will-change:transform;animation:dots 24s ease-in-out infinite alternate;
-  background-image:
-    radial-gradient(1.5px 1.5px at 18% 28%, rgba(255,200,1,.55), transparent 60%),
-    radial-gradient(1.5px 1.5px at 72% 18%, rgba(241,246,244,.4), transparent 60%),
-    radial-gradient(1px 1px at 42% 58%, rgba(241,246,244,.3), transparent 60%),
-    radial-gradient(1.5px 1.5px at 86% 46%, rgba(255,153,50,.45), transparent 60%),
-    radial-gradient(1px 1px at 56% 36%, rgba(241,246,244,.28), transparent 60%),
-    radial-gradient(1.5px 1.5px at 9% 64%, rgba(241,246,244,.3), transparent 60%),
-    radial-gradient(1px 1px at 33% 12%, rgba(255,200,1,.35), transparent 60%);
-  -webkit-mask-image:radial-gradient(120% 78% at 50% 0%, #000 28%, transparent 74%);
-          mask-image:radial-gradient(120% 78% at 50% 0%, #000 28%, transparent 74%)}
-@keyframes dots{to{transform:translate3d(0,-16px,0)}}
-.layer--grain{opacity:.035;mix-blend-mode:overlay;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
 /* ===========================================================================
    LOADER — non-blocking, fades within the 500ms budget
@@ -243,7 +229,7 @@ ul{list-style:none;padding:0}
 .badge__dot{width:6px;height:6px;border-radius:50%;background:var(--forsythia);box-shadow:0 0 10px var(--glow);
   animation:pulse 2.4s ease-in-out infinite}
 @keyframes pulse{50%{opacity:.4;transform:scale(.8)}}
-.hero__title{font-family:var(--mono);font-weight:700;font-size:var(--fs-display);line-height:1.02;
+.hero__title{font-family:var(--mono);font-weight:700;font-size:var(--fs-display);line-height:1.08;
   letter-spacing:-.045em;margin:1.5rem 0 0}
 .hero__title .ln{display:block}
 /* restrained accent — gold underline that draws in, not a yellow fill */

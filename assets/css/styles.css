@@ -149,7 +149,13 @@ ul{list-style:none;padding:0}
              border-color var(--t-micro) var(--ease-micro), color var(--t-micro) var(--ease-micro),
              box-shadow var(--t-micro) var(--ease-micro)}
 .btn:hover{transform:translateY(-2px)}
-.btn--solid{background:var(--forsythia);color:var(--noir);border-color:var(--forsythia)}
+.btn--solid{background:var(--forsythia);color:var(--noir);border-color:var(--forsythia);
+  position:relative;overflow:hidden}
+.btn--solid::after{content:'';position:absolute;top:0;bottom:0;left:-60%;width:40%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);
+  transform:skewX(-18deg);opacity:0}
+.btn--solid:hover::after{animation:shine .7s var(--ease-micro)}
+@keyframes shine{0%{left:-60%;opacity:.9}100%{left:130%;opacity:0}}
 .btn--solid:hover{background:#ffd633;box-shadow:0 14px 34px -12px var(--glow)}
 .btn--ghost{background:rgba(217,232,226,.02)}
 .btn--ghost:hover{border-color:var(--forsythia);color:var(--forsythia)}
@@ -309,6 +315,60 @@ body.is-loaded .hl::after{transform:scaleX(1);transition-delay:300ms}
 .bento__hint{margin-top:1rem;font-family:var(--mono);font-size:.74rem;color:var(--text-faint);
   display:flex;align-items:center;gap:.5rem}
 
+/* ---- inline animated diagrams (fill the card, restrained colour) ---- */
+.bento__viz{position:relative;z-index:1;margin-top:1.1rem;width:100%}
+/* flow: nodes on a rail + travelling spark */
+.viz-flow{display:flex;align-items:center;justify-content:space-between;height:40px;padding:0 4px}
+.viz-flow::before{content:'';position:absolute;left:4px;right:4px;top:50%;height:1px;background:var(--line-2)}
+.viz-flow .dot{width:9px;height:9px;border-radius:50%;background:var(--surface-3);border:1px solid var(--line-2);position:relative;z-index:1}
+.viz-flow .spark{position:absolute;top:50%;left:4px;width:7px;height:7px;border-radius:50%;background:var(--forsythia);
+  box-shadow:0 0 12px var(--glow);transform:translate(-50%,-50%);animation:flowMove 2.8s ease-in-out infinite}
+@keyframes flowMove{0%{left:4px}100%{left:calc(100% - 4px)}}
+/* sync: vertical rail, two travellers (up gold / down orange) */
+.viz-sync{position:relative;height:88px;display:flex;justify-content:center}
+.viz-sync::before{content:'';position:absolute;top:6px;bottom:6px;width:1px;background:var(--line-2)}
+.viz-sync .n{position:absolute;left:50%;transform:translateX(-50%);width:11px;height:11px;border-radius:50%;
+  border:1px solid var(--line-2);background:var(--surface-3)}
+.viz-sync .top{top:0}.viz-sync .bot{bottom:0}
+.viz-sync .up,.viz-sync .down{position:absolute;left:50%;width:6px;height:6px;border-radius:50%;
+  transform:translateX(-50%);box-shadow:0 0 10px var(--glow)}
+.viz-sync .up{background:var(--forsythia);animation:syncUp 2.4s ease-in-out infinite}
+.viz-sync .down{background:var(--saffron);animation:syncDown 2.4s ease-in-out infinite}
+@keyframes syncUp{0%{top:74px;opacity:0}15%{opacity:1}85%{opacity:1}100%{top:8px;opacity:0}}
+@keyframes syncDown{0%{top:8px;opacity:0}15%{opacity:1}85%{opacity:1}100%{top:74px;opacity:0}}
+/* bars: muted with one gold peak */
+.viz-bars{display:flex;align-items:flex-end;gap:6px;height:52px}
+.viz-bars i{flex:1;height:var(--h);background:rgba(241,246,244,.12);border-radius:3px 3px 0 0;
+  transform-origin:bottom;animation:barPulse 2.6s ease-in-out infinite;animation-delay:var(--d)}
+.viz-bars i:nth-child(4){background:linear-gradient(180deg,var(--forsythia),rgba(255,200,1,.25))}
+@keyframes barPulse{50%{transform:scaleY(.62)}}
+/* spark: drawing sparkline trending up */
+.viz-spark{height:50px;color:var(--forsythia)}
+.viz-spark svg{width:100%;height:100%}
+.spark-line{stroke-dasharray:300;stroke-dashoffset:300;animation:draw 3s ease-in-out infinite}
+@keyframes draw{0%{stroke-dashoffset:300}55%{stroke-dashoffset:0}100%{stroke-dashoffset:0}}
+.spark-end{fill:var(--forsythia);filter:drop-shadow(0 0 6px var(--glow));animation:endPulse 3s ease-in-out infinite}
+@keyframes endPulse{0%,55%{opacity:0;r:2}70%{opacity:1;r:3.6}100%{opacity:.6;r:3.2}}
+/* stack: layers with a light scan (shine) */
+.viz-stack{display:flex;flex-direction:column;gap:7px}
+.viz-stack i{height:13px;border-radius:4px;border:1px solid var(--line);position:relative;overflow:hidden;
+  background:linear-gradient(90deg,var(--surface-3),rgba(255,255,255,.05))}
+.viz-stack i::after{content:'';position:absolute;inset:0;transform:translateX(-100%);
+  background:linear-gradient(90deg,transparent,var(--glow),transparent);animation:scan 2.8s linear infinite}
+.viz-stack i:nth-child(2)::after{animation-delay:.35s}
+.viz-stack i:nth-child(3)::after{animation-delay:.7s}
+.viz-stack i:nth-child(4)::after{animation-delay:1.05s}
+@keyframes scan{0%{transform:translateX(-100%)}60%,100%{transform:translateX(100%)}}
+/* grid: connector matrix twinkling */
+.viz-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:7px}
+.viz-grid i{aspect-ratio:1;border-radius:50%;background:rgba(241,246,244,.10);animation:twinkle 3.2s ease-in-out infinite}
+.viz-grid i:nth-child(3),.viz-grid i:nth-child(8),.viz-grid i:nth-child(11),.viz-grid i:nth-child(14){
+  background:var(--forsythia);box-shadow:0 0 8px var(--glow)}
+.viz-grid i:nth-child(2n){animation-delay:.4s}
+.viz-grid i:nth-child(3n){animation-delay:.9s}
+.viz-grid i:nth-child(5n){animation-delay:1.4s}
+@keyframes twinkle{0%,100%{opacity:.35}50%{opacity:1}}
+
 /* ===========================================================================
    FEATURE 1 — PRICING
    =========================================================================== */
@@ -461,6 +521,7 @@ body.is-loaded .hero__reveal{animation:rise 300ms var(--ease-micro) forwards;ani
   .bento{grid-template-columns:1fr;grid-auto-rows:auto;gap:10px}
   .bento__node,.bento__node--wide,.bento__node--tall{grid-column:auto;grid-row:auto}
   .bento__node{padding:1.15rem 1.25rem;cursor:pointer}
+  .bento__viz{display:none}
   .bento__node:hover{transform:none}
   .bento__node.is-active{border-color:var(--line-2);box-shadow:0 0 0 1px var(--glow), 0 18px 44px -30px var(--glow)}
   .bento__face{flex-direction:row;align-items:center;gap:1rem}

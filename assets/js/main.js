@@ -6,6 +6,7 @@
 import { initPricing, refreshPricingThumbs } from './pricing.js';
 import { initFeatures } from './features.js';
 import { initReveals, initCounters } from './motion.js';
+import { initTrail } from './trail.js';
 
 const $ = (s, r = document) => r.querySelector(s);
 
@@ -48,6 +49,7 @@ function init() {
   initNav();
   initReveals();
   initCounters();
+  initTrail();
   runEntryOrchestration();
 
   const yr = $('#year');

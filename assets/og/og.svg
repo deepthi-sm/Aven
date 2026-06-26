@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Aven — AI Data Automation Platform">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Aven, AI Data Automation Platform">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#172B36"/>
@@ -25,6 +25,6 @@
     <text x="44" y="-66" font-family="'JetBrains Mono',monospace" font-size="30" font-weight="800" letter-spacing="8" fill="#F1F6F4">AVEN</text>
     <text x="0" y="40" font-family="'JetBrains Mono',monospace" font-size="92" font-weight="800" letter-spacing="-3" fill="#F1F6F4">Data that</text>
     <text x="0" y="148" font-family="'JetBrains Mono',monospace" font-size="92" font-weight="800" letter-spacing="-3" fill="#F1F6F4">runs <tspan fill="#FFC801">itself.</tspan></text>
-    <text x="2" y="212" font-family="'Inter',sans-serif" font-size="27" fill="#D9E8E2">The AI data automation platform — self-healing pipelines, real-time sync, zero ops.</text>
+    <text x="2" y="212" font-family="'Inter',sans-serif" font-size="27" fill="#D9E8E2">The AI data automation platform, self-healing pipelines, real-time sync, zero ops.</text>
   </g>
 </svg>

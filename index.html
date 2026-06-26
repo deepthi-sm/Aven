@@ -119,8 +119,8 @@
               <span class="ln hero__reveal" style="--d:120ms">that <span class="hl">thinks.</span></span>
             </h1>
             <p class="hero__sub hero__reveal" style="--d:180ms">
-              Aven is the autonomous data platform that builds, heals and ships your pipelines,
-              so your team ships <strong>insight</strong>, not infrastructure.
+              Autonomous pipelines that adapt, recover and deliver in real time.
+              Ship <strong>insight</strong>, not infrastructure.
             </p>
             <div class="hero__actions hero__reveal" style="--d:240ms">
               <a class="btn btn--solid" href="#cta">
@@ -141,7 +141,7 @@
           </div>
 
           <!-- dynamic orbit visual (uses provided UI SVGs as orbiting nodes) -->
-          <div class="hero__visual hero__reveal" style="--d:180ms" aria-hidden="true">
+          <div class="hero__visual" aria-hidden="true">
             <div class="orbit">
               <div class="orbit__core">
                 <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8.372 1.349a.75.75 0 0 0-.744 0l-4.81 2.748L8 7.131l5.182-3.034zM14 5.357L8.75 8.43v6.005l4.872-2.784A.75.75 0 0 0 14 11zm-6.75 9.078V8.43L2 5.357V11c0 .27.144.518.378.651z"/></svg>
@@ -163,11 +163,11 @@
       <!-- ===================== STATS BAND (animated) ===================== -->
       <section class="section" id="stats" aria-label="Platform metrics" style="padding-block:0">
         <div class="container">
-          <div class="stats" data-reveal>
-            <div class="stat"><p class="stat__num"><span data-count="2.4" data-suffix="B">0</span></p><p class="stat__label">rows automated / day</p></div>
-            <div class="stat"><p class="stat__num"><span data-count="200" data-suffix="+">0</span></p><p class="stat__label">native connectors</p></div>
-            <div class="stat"><p class="stat__num"><span data-count="99.99" data-suffix="%">0</span></p><p class="stat__label">platform uptime</p></div>
-            <div class="stat"><p class="stat__num"><span class="accent" data-count="12" data-suffix="ms">0</span></p><p class="stat__label">p50 sync latency</p></div>
+          <div class="stats">
+            <div class="stat" data-reveal data-reveal-delay="0"><p class="stat__num"><span data-count="2.4" data-suffix="B+">0</span></p><p class="stat__label">Rows automated / day</p></div>
+            <div class="stat" data-reveal data-reveal-delay="70"><p class="stat__num"><span data-count="200" data-suffix="+">0</span></p><p class="stat__label">Native connectors</p></div>
+            <div class="stat" data-reveal data-reveal-delay="140"><p class="stat__num"><span data-count="99.99" data-suffix="%">0</span></p><p class="stat__label">Platform uptime</p></div>
+            <div class="stat" data-reveal data-reveal-delay="210"><p class="stat__num"><span class="accent" data-count="12" data-suffix="ms">0</span></p><p class="stat__label">P50 sync latency</p></div>
           </div>
         </div>
       </section>
@@ -177,8 +177,8 @@
         <div class="container">
           <div class="section__head" data-reveal>
             <span class="kicker">Capabilities</span>
-            <h2 class="section__title" id="features-title">One platform.<br /><span class="accent">Every</span> data motion.</h2>
-            <p class="section__lede">A modern bento on desktop, hover any tile to dive deeper. On mobile it becomes a touch accordion that remembers exactly where you were.</p>
+            <h2 class="section__title" id="features-title">One system.<br />Every <span class="accent">pipeline.</span></h2>
+            <p class="section__lede">Hover any tile to go deeper. On mobile it becomes a touch accordion that remembers exactly where you were.</p>
           </div>
 
           <div class="bento" id="bento" data-reveal>
@@ -193,7 +193,7 @@
                 </div>
                 <span class="bento__chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="m19.5 8.25l-7.5 7.5l-7.5-7.5"/></svg></span>
               </div>
-              <div class="bento__detail" id="d0" role="region"><p>Aven watches every source for breaking changes and rewrites the transform DAG on the fly, backfilling, deduping and retrying failed loads without a single page at 3am.</p></div>
+              <div class="bento__detail" id="d0" role="region"><p>Schema drift detected.<br>DAG rewritten.<br>Recovery in <span class="accent">230ms</span>.</p></div>
             </article>
 
             <!-- node 1 -->
@@ -207,7 +207,7 @@
                 </div>
                 <span class="bento__chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="m19.5 8.25l-7.5 7.5l-7.5-7.5"/></svg></span>
               </div>
-              <div class="bento__detail" id="d1" role="region"><p>Sub-second CDC keeps warehouses, lakes and operational stores in lockstep. Exactly-once delivery semantics mean no duplicates, no gaps and no reconciliation jobs.</p></div>
+              <div class="bento__detail" id="d1" role="region"><p>Row committed.<br>Streamed &amp; acknowledged.<br>Exactly-once at <span class="accent">12ms p50</span>.</p></div>
             </article>
 
             <!-- node 2 -->
@@ -221,7 +221,7 @@
                 </div>
                 <span class="bento__chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="m19.5 8.25l-7.5 7.5l-7.5-7.5"/></svg></span>
               </div>
-              <div class="bento__detail" id="d2" role="region"><p>Define a metric once and Aven serves it identically to BI tools, notebooks and the API, versioned, lineage-tracked and access-controlled end to end.</p></div>
+              <div class="bento__detail" id="d2" role="region"><p>Defined once.<br>Served to BI, API &amp; notebooks.<br><span class="accent">Lineage</span> tracked end to end.</p></div>
             </article>
 
             <!-- node 3 -->
@@ -235,7 +235,7 @@
                 </div>
                 <span class="bento__chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="m19.5 8.25l-7.5 7.5l-7.5-7.5"/></svg></span>
               </div>
-              <div class="bento__detail" id="d3" role="region"><p>Train, register and serve models next to your data. Drift detection retrains automatically and ships champion / challenger evaluations straight to your dashboards.</p></div>
+              <div class="bento__detail" id="d3" role="region"><p>Drift detected.<br>Model retrained.<br><span class="accent">Champion</span> shipped automatically.</p></div>
             </article>
 
             <!-- node 4 -->
@@ -249,7 +249,7 @@
                 </div>
                 <span class="bento__chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="m19.5 8.25l-7.5 7.5l-7.5-7.5"/></svg></span>
               </div>
-              <div class="bento__detail" id="d4" role="region"><p>Petabyte-scale compute that autoscales to zero between queries. Separation of storage and compute means you only ever pay for the milliseconds you actually use.</p></div>
+              <div class="bento__detail" id="d4" role="region"><p>Query in.<br>Compute scaled, result out.<br>Idle cost: <span class="accent">$0</span>.</p></div>
             </article>
 
             <!-- node 5 -->
@@ -263,7 +263,7 @@
                 </div>
                 <span class="bento__chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="m19.5 8.25l-7.5 7.5l-7.5-7.5"/></svg></span>
               </div>
-              <div class="bento__detail" id="d5" role="region"><p>From Postgres and Kafka to Stripe and Salesforce, typed, schema-aware connectors with automatic credential rotation and incremental sync out of the box.</p></div>
+              <div class="bento__detail" id="d5" role="region"><p>Source linked.<br>Schema mapped, sync incremental.<br>Keys <span class="accent">auto-rotated</span>.</p></div>
             </article>
           </div>
         </div>
@@ -274,7 +274,7 @@
         <div class="container">
           <div class="section__head" data-reveal>
             <span class="kicker">How it works</span>
-            <h2 class="section__title" id="how-title">From source to insight in <span class="accent">three moves.</span></h2>
+            <h2 class="section__title" id="how-title">From raw events to <span class="accent">governed insight.</span></h2>
             <p class="section__lede">No glue code, no cron jobs, no 3am pages. Aven runs the whole loop for you.</p>
           </div>
           <div class="steps" data-reveal>
@@ -307,7 +307,7 @@
         <div class="container">
           <div class="section__head" data-reveal style="text-align:center;margin-inline:auto">
             <span class="kicker" style="justify-content:center">Pricing</span>
-            <h2 class="section__title" id="pricing-title">Scale-ready pricing,<br /><span class="accent">three currencies.</span></h2>
+            <h2 class="section__title" id="pricing-title">Built to scale.<br />Priced to <span class="accent">start.</span></h2>
             <p class="section__lede" style="margin-inline:auto">Switch billing cycle and currency live, every figure is computed from a pricing matrix, never hardcoded. Annual saves a flat 20%.</p>
           </div>
 
@@ -391,7 +391,7 @@
         <div class="container">
           <div class="section__head" data-reveal>
             <span class="kicker">Social proof</span>
-            <h2 class="section__title" id="customers-title">Trusted by data teams<br />shipping at <span class="accent">scale.</span></h2>
+            <h2 class="section__title" id="customers-title">Trusted by teams where<br />data <span class="accent">can't fail.</span></h2>
           </div>
         </div>
 
@@ -407,7 +407,7 @@
             <article class="case">
               <span class="case__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M16.023 9.348h4.992M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"/></svg></span>
               <p class="case__metric">94%</p>
-              <p class="case__label">less pipeline maintenance</p>
+              <p class="case__label">fewer pipeline failures</p>
               <p class="case__org">Logistics · fleet telemetry</p>
             </article>
             <article class="case">
@@ -424,9 +424,9 @@
             </article>
             <article class="case">
               <span class="case__icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8.372 1.349a.75.75 0 0 0-.744 0l-4.81 2.748L8 7.131l5.182-3.034zM14 5.357L8.75 8.43v6.005l4.872-2.784A.75.75 0 0 0 14 11zm-6.75 9.078V8.43L2 5.357V11c0 .27.144.518.378.651z"/></svg></span>
-              <p class="case__metric">Zero</p>
-              <p class="case__label">data loss, exactly-once</p>
-              <p class="case__org">Health · clinical pipelines</p>
+              <p class="case__metric">0</p>
+              <p class="case__label">incidents, exactly-once</p>
+              <p class="case__org">across 4.2B synced rows</p>
             </article>
           </div>
         </div>
@@ -439,6 +439,11 @@
             <div class="cta-band__left">
               <h2 class="cta-band__title" id="cta-title">Put your data<br />on <span class="hl">autopilot.</span></h2>
               <p class="cta-band__sub">Start free in minutes. No credit card, no pipeline babysitting, just insight.</p>
+              <div class="cta-chips" aria-hidden="true">
+                <span class="cta-chip"><span class="ok"></span>Realtime</span>
+                <span class="cta-chip"><span class="ok"></span>Healthy</span>
+                <span class="cta-chip"><span class="ok"></span>Synced</span>
+              </div>
             </div>
             <div class="cta-band__right">
               <div class="cta-band__actions">

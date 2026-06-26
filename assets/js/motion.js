@@ -19,7 +19,7 @@ export function initCounters() {
     const tick = (ts) => {
       if (startTs === null) startTs = ts;
       const p = Math.min((ts - startTs) / dur, 1);
-      const eased = 1 - Math.pow(1 - p, 3);           // easeOutCubic
+      const eased = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);   // easeOutExpo
       el.textContent = (target * eased).toFixed(decimals) + suffix;
       if (p < 1) requestAnimationFrame(tick);
       else el.textContent = target.toFixed(decimals) + suffix;

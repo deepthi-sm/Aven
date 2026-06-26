@@ -47,9 +47,18 @@ export function initTrail() {
     if (ps.length > CAP) ps.splice(0, ps.length - CAP);
   }
 
+  let lx = 0, ly = 0;
   window.addEventListener('pointermove', (e) => {
     const touch = e.pointerType !== 'mouse';
-    spawn(e.clientX, e.clientY, touch ? 4 : 1, touch ? 2.6 : 1.15);
+    if (!touch) {
+      // gate by distance so the mouse trail is sparse and calm
+      const d = Math.hypot(e.clientX - lx, e.clientY - ly);
+      if (d < 9) return;
+      lx = e.clientX; ly = e.clientY;
+      spawn(e.clientX, e.clientY, 1, 0.9);
+    } else {
+      spawn(e.clientX, e.clientY, 3, 2.4);
+    }
   }, { passive: true });
 
   // a little extra burst when a touch starts (tap/drag feedback)

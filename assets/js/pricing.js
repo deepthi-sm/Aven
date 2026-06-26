@@ -49,25 +49,58 @@ export function initPricing(root) {
 }
 
 // The ONLY DOM write on switch: patch cached price text nodes.
+// Initial paint is instant; subsequent changes INTERPOLATE the number upward
+// and fade the currency symbol separately. All writes stay on the cached text
+// nodes — no parent re-render, no new elements.
 function paintPrices(initial = false) {
   const sym = PRICING.fx[currency].symbol;
   const suffix = PRICING.billing[billing].suffix;
   for (const tier of PRICING.tiers) {
     const r = refs[tier.id];
     if (!r || !r.value) continue;
-    r.symbol.textContent = sym;
-    r.value.textContent = formatValue(computeRaw(tier));
+    const target = computeRaw(tier);
     r.suffix.textContent = suffix;
-    if (!initial) pulse(r.value);
+    if (initial) {
+      r.symbol.textContent = sym;
+      r.value.textContent = formatValue(target);
+      r.last = target;
+    } else {
+      fadeSymbol(r.symbol, sym);
+      animateValue(r, target);
+    }
   }
 }
 
-// WAAPI digit pulse — native, hardware-accelerated, transform/opacity only (~175ms).
-function pulse(el) {
-  el.animate(
-    [{ opacity: 0.35, transform: 'translateY(-4px)' }, { opacity: 1, transform: 'translateY(0)' }],
-    { duration: 175, easing: 'cubic-bezier(0,0,.2,1)' }
+// Interpolate a single price text node from its last value → target (easeOutExpo).
+function animateValue(r, target) {
+  const from = r.last == null ? target : r.last;
+  r.last = target;
+  if (r.raf) cancelAnimationFrame(r.raf);
+  r.value.animate(
+    [{ opacity: 0.5, transform: 'translateY(-5px)' }, { opacity: 1, transform: 'translateY(0)' }],
+    { duration: 220, easing: 'cubic-bezier(0,0,.2,1)' }
   );
+  const dur = 420;
+  let start = null;
+  const step = (ts) => {
+    if (start === null) start = ts;
+    const p = Math.min((ts - start) / dur, 1);
+    const eased = p === 1 ? 1 : 1 - Math.pow(2, -10 * p); // easeOutExpo
+    r.value.textContent = formatValue(from + (target - from) * eased);
+    if (p < 1) r.raf = requestAnimationFrame(step);
+    else r.value.textContent = formatValue(target);
+  };
+  r.raf = requestAnimationFrame(step);
+}
+
+// Fade the currency symbol out → swap → in (its own little transition).
+function fadeSymbol(node, sym) {
+  if (node.textContent === sym) return;
+  const out = node.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 110, easing: 'ease-in' });
+  out.onfinish = () => {
+    node.textContent = sym;
+    node.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 150, easing: 'ease-out' });
+  };
 }
 
 function wireControls(root) {

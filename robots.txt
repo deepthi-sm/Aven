@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aven-platform.example.com/sitemap.xml

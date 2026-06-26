@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Aven — AI Data Automation Platform">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#172B36"/>
+      <stop offset="1" stop-color="#102530"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.18" cy="0.1" r="0.7">
+      <stop offset="0" stop-color="#FFC801" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#FFC801" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.92" cy="1" r="0.6">
+      <stop offset="0" stop-color="#FF9932" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#FF9932" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0V56" fill="none" stroke="#D9E8E2" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+  <g transform="translate(88,250)">
+    <circle cx="14" cy="-78" r="13" fill="#FFC801"/>
+    <text x="44" y="-66" font-family="'JetBrains Mono',monospace" font-size="30" font-weight="800" letter-spacing="8" fill="#F1F6F4">AVEN</text>
+    <text x="0" y="40" font-family="'JetBrains Mono',monospace" font-size="92" font-weight="800" letter-spacing="-3" fill="#F1F6F4">Data that</text>
+    <text x="0" y="148" font-family="'JetBrains Mono',monospace" font-size="92" font-weight="800" letter-spacing="-3" fill="#F1F6F4">runs <tspan fill="#FFC801">itself.</tspan></text>
+    <text x="2" y="212" font-family="'Inter',sans-serif" font-size="27" fill="#D9E8E2">The AI data automation platform — self-healing pipelines, real-time sync, zero ops.</text>
+  </g>
+</svg>

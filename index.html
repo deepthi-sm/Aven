@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#172B36" />
+
+  <!-- Primary SEO -->
+  <title>Aven — AI Data Automation Platform | Self-Healing Pipelines</title>
+  <meta name="description" content="Aven is the AI data automation platform that builds, heals and ships your data pipelines. Real-time sync, 200+ connectors, predictive models and a managed warehouse — so your team ships insight, not infrastructure." />
+  <meta name="keywords" content="AI data automation, data pipelines, ETL, real-time sync, CDC, data warehouse, SaaS" />
+  <meta name="author" content="Aven" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aven-platform.example.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Aven" />
+  <meta property="og:title" content="Aven — AI Data Automation Platform" />
+  <meta property="og:description" content="Self-healing pipelines, real-time sync and a managed warehouse. Ship insight, not infrastructure." />
+  <meta property="og:url" content="https://aven-platform.example.com/" />
+  <meta property="og:image" content="https://aven-platform.example.com/assets/og/og.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Aven — AI Data Automation Platform" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Aven — AI Data Automation Platform" />
+  <meta name="twitter:description" content="Self-healing pipelines, real-time sync and a managed warehouse. Ship insight, not infrastructure." />
+  <meta name="twitter:image" content="https://aven-platform.example.com/assets/og/og.svg" />
+
+  <!-- Icons & manifest -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23172B36'/%3E%3Cpath d='M6 25 16 6 26 25' stroke='%23F1F6F4' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.5 18H21.5' stroke='%23F1F6F4' stroke-width='2.6' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='6' r='3.2' fill='%23FFC801'/%3E%3C/svg%3E" />
+
+  <!-- Performance: preload above-the-fold fonts -->
+  <link rel="preload" href="assets/fonts/jbmono-800.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin />
+
+  <link rel="stylesheet" href="assets/css/fonts.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Aven",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "AI data automation platform with self-healing pipelines, real-time sync, 200+ connectors, predictive models and a managed warehouse.",
+    "offers": [
+      { "@type": "Offer", "name": "Starter",    "price": "19",  "priceCurrency": "USD", "category": "monthly subscription" },
+      { "@type": "Offer", "name": "Growth",     "price": "79",  "priceCurrency": "USD", "category": "monthly subscription" },
+      { "@type": "Offer", "name": "Enterprise", "price": "239", "priceCurrency": "USD", "category": "monthly subscription" }
+    ],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1280" }
+  }
+  </script>
+</head>
+
+<body>
+  <!-- LOADER (non-blocking overlay) -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <p class="loader__mark">
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><path d="M5 27 16 5 27 27" stroke="#F1F6F4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 18H22" stroke="#F1F6F4" stroke-width="2.4" stroke-linecap="round"/><circle cx="16" cy="5" r="3.4" fill="#FFC801"/></svg>
+        AVEN
+      </p>
+      <div class="loader__bar"></div>
+    </div>
+  </div>
+
+  <!-- AMBIENT LAYERS -->
+  <div class="layer layer--grid" aria-hidden="true"></div>
+  <div class="layer layer--glow" aria-hidden="true"></div>
+  <div class="layer layer--dots" aria-hidden="true"></div>
+  <div class="layer layer--grain" aria-hidden="true"></div>
+
+  <div class="shell">
+    <!-- ===================== HEADER / NAV ===================== -->
+    <header class="nav" id="nav">
+      <div class="container nav__inner">
+        <a class="brand" href="#top" aria-label="Aven home">
+          <svg class="brand__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 27 16 5 27 27" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 18H22" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="16" cy="5" r="3.4" fill="#FFC801"/></svg>
+          AVEN
+        </a>
+        <nav class="nav__links" aria-label="Primary">
+          <a class="nav__link" href="#features">Platform</a>
+          <a class="nav__link" href="#how">How it works</a>
+          <a class="nav__link" href="#pricing">Pricing</a>
+          <a class="nav__link" href="#customers">Customers</a>
+        </nav>
+        <div class="nav__actions">
+          <button class="nav__icon" id="nav-search" aria-label="Search">
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33l-1.42 1.42l-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/></svg>
+          </button>
+          <a class="btn btn--solid nav__cta" href="#cta">
+            Start free
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8.25 4.5l7.5 7.5l-7.5 7.5"/></svg>
+          </a>
+          <button class="nav__burger" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"/></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- ===================== HERO ===================== -->
+      <section class="section hero" id="hero" aria-labelledby="hero-title">
+        <div class="container hero__grid">
+          <div class="hero__copy">
+            <span class="badge hero__reveal" style="--d:0ms">
+              <span class="badge__dot"></span> AI Data Automation Platform
+            </span>
+            <h1 class="hero__title" id="hero-title">
+              <span class="ln hero__reveal" style="--d:60ms">Infrastructure</span>
+              <span class="ln hero__reveal" style="--d:120ms">that <span class="hl">thinks.</span></span>
+            </h1>
+            <p class="hero__sub hero__reveal" style="--d:180ms">
+              Aven is the autonomous data platform that builds, heals and ships your pipelines —
+              so your team ships <strong>insight</strong>, not infrastructure.
+            </p>
+            <div class="hero__actions hero__reveal" style="--d:240ms">
+              <a class="btn btn--solid" href="#cta">
+                Start free trial
+                <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8.25 4.5l7.5 7.5l-7.5 7.5"/></svg>
+              </a>
+              <a class="btn btn--ghost" href="#features">
+                <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.023 9.348h4.992M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"/></svg>
+                See the platform
+              </a>
+            </div>
+            <div class="hero__labels hero__reveal" style="--d:300ms" aria-label="Platform highlights">
+              <span class="hero__label"><span class="dot"></span> 12ms p50 sync</span>
+              <span class="hero__label"><span class="dot"></span> SOC 2 Type II</span>
+              <span class="hero__label"><span class="dot"></span> 99.99% uptime</span>
+              <span class="hero__label"><span class="dot"></span> Exactly-once</span>
+            </div>
+          </div>
+
+          <!-- dynamic orbit visual (uses provided UI SVGs as orbiting nodes) -->
+          <div class="hero__visual hero__reveal" style="--d:180ms" aria-hidden="true">
+            <div class="orbit">
+              <div class="orbit__core">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8.372 1.349a.75.75 0 0 0-.744 0l-4.81 2.748L8 7.131l5.182-3.034zM14 5.357L8.75 8.43v6.005l4.872-2.784A.75.75 0 0 0 14 11zm-6.75 9.078V8.43L2 5.357V11c0 .27.144.518.378.651z"/></svg>
+              </div>
+              <div class="orbit__ring orbit__r1">
+                <span class="orbit__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M16.023 9.348h4.992M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"/></svg></span>
+              </div>
+              <div class="orbit__ring orbit__r2">
+                <span class="orbit__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z"/><path d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z"/></svg></span>
+              </div>
+              <div class="orbit__ring orbit__r3">
+                <span class="orbit__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/></svg></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== STATS BAND (animated) ===================== -->
+      <section class="section" id="stats" aria-label="Platform metrics" style="padding-block:0">
+        <div class="container">
+          <div class="stats" data-reveal>
+            <div class="stat"><p class="stat__num"><span data-count="2.4" data-suffix="B">0</span></p><p class="stat__label">rows automated / day</p></div>
+            <div class="stat"><p class="stat__num"><span data-count="200" data-suffix="+">0</span></p><p class="stat__label">native connectors</p></div>
+            <div class="stat"><p class="stat__num"><span data-count="99.99" data-suffix="%">0</span></p><p class="stat__label">platform uptime</p></div>
+            <div class="stat"><p class="stat__num"><span class="accent" data-count="12" data-suffix="ms">0</span></p><p class="stat__label">p50 sync latency</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== FEATURE 2: BENTO / ACCORDION ===================== -->
+      <section class="section" id="features" aria-labelledby="features-title">
+        <div class="container">
+          <div class="section__head" data-reveal>
+            <span class="kicker">Capabilities</span>
+            <h2 class="section__title" id="features-title">One platform.<br /><span class="accent">Every</span> data motion.</h2>
+            <p class="section__lede">A modern bento on desktop — hover any tile to dive deeper. On mobile it becomes a touch accordion that remembers exactly where you were.</p>
+          </div>
+
+          <div class="bento" id="bento" data-reveal>
+            <!-- node 0 -->
+            <article class="bento__node bento__node--wide" data-index="0" tabindex="0" role="button" aria-expanded="false" aria-controls="d0">
+              <div class="bento__face">
+                <span class="bento__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93c.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204c.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78c-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107c-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93c-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204c-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78c.165-.398.143-.854-.107-1.204l-.527-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107c.397-.165.71-.505.78-.929l.15-.894Z"/><path d="M15 12a3 3 0 1 1-6 0a3 3 0 0 1 6 0Z"/></svg></span>
+                <div class="bento__heading">
+                  <h3 class="bento__title">Autonomous Pipelines</h3>
+                  <p class="bento__short">Self-healing ETL that reroutes around schema drift.</p>
+                </div>
+                <span class="bento__chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="m19.5 8.25l-7.5 7.5l-7.5-7.5"/></svg></span>
+              </div>
+              <div class="bento__detail" id="d0" role="region"><p>Aven watches every source for breaking changes and rewrites the transform DAG on the fly — backfilling, deduping and retrying failed loads without a single page at 3am.</p></div>
+            </article>
+
+            <!-- node 1 -->
+            <article class="bento__node bento__node--tall" data-index="1" tabindex="0" role="button" aria-expanded="false" aria-controls="d1">
+              <div class="bento__face">
+                <span class="bento__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M16.023 9.348h4.992M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"/></svg></span>
+                <div class="bento__heading">
+                  <h3 class="bento__title">Real-time Sync</h3>
+                  <p class="bento__short">Bi-directional change-data-capture at the row level.</p>
+                </div>
+                <span class="bento__chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="m19.5 8.25l-7.5 7.5l-7.5-7.5"/></svg></span>
+              </div>
+              <div class="bento__detail" id="d1" role="region"><p>Sub-second CDC keeps warehouses, lakes and operational stores in lockstep. Exactly-once delivery semantics mean no duplicates, no gaps and no reconciliation jobs.</p></div>
+            </article>
+
+            <!-- node 2 -->
+            <article class="bento__node" data-index="2" tabindex="0" role="button" aria-expanded="false" aria-controls="d2">
+              <div class="bento__face">
+                <span class="bento__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z"/><path d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z"/></svg></span>
+                <div class="bento__heading">
+                  <h3 class="bento__title">Unified Analytics</h3>
+                  <p class="bento__short">Governed metrics, one semantic layer.</p>
+                </div>
+                <span class="bento__chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="m19.5 8.25l-7.5 7.5l-7.5-7.5"/></svg></span>
+              </div>
+              <div class="bento__detail" id="d2" role="region"><p>Define a metric once and Aven serves it identically to BI tools, notebooks and the API — versioned, lineage-tracked and access-controlled end to end.</p></div>
+            </article>
+
+            <!-- node 3 -->
+            <article class="bento__node" data-index="3" tabindex="0" role="button" aria-expanded="false" aria-controls="d3">
+              <div class="bento__face">
+                <span class="bento__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 0 1 5.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/></svg></span>
+                <div class="bento__heading">
+                  <h3 class="bento__title">Predictive Models</h3>
+                  <p class="bento__short">Forecasting baked into the warehouse.</p>
+                </div>
+                <span class="bento__chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="m19.5 8.25l-7.5 7.5l-7.5-7.5"/></svg></span>
+              </div>
+              <div class="bento__detail" id="d3" role="region"><p>Train, register and serve models next to your data. Drift detection retrains automatically and ships champion / challenger evaluations straight to your dashboards.</p></div>
+            </article>
+
+            <!-- node 4 -->
+            <article class="bento__node bento__node--tall" data-index="4" tabindex="0" role="button" aria-expanded="false" aria-controls="d4">
+              <div class="bento__face">
+                <span class="bento__icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8.372 1.349a.75.75 0 0 0-.744 0l-4.81 2.748L8 7.131l5.182-3.034zM14 5.357L8.75 8.43v6.005l4.872-2.784A.75.75 0 0 0 14 11zm-6.75 9.078V8.43L2 5.357V11c0 .27.144.518.378.651z"/></svg></span>
+                <div class="bento__heading">
+                  <h3 class="bento__title">Managed Warehouse</h3>
+                  <p class="bento__short">Elastic columnar storage, zero ops.</p>
+                </div>
+                <span class="bento__chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="m19.5 8.25l-7.5 7.5l-7.5-7.5"/></svg></span>
+              </div>
+              <div class="bento__detail" id="d4" role="region"><p>Petabyte-scale compute that autoscales to zero between queries. Separation of storage and compute means you only ever pay for the milliseconds you actually use.</p></div>
+            </article>
+
+            <!-- node 5 -->
+            <article class="bento__node bento__node--wide" data-index="5" tabindex="0" role="button" aria-expanded="false" aria-controls="d5">
+              <div class="bento__face">
+                <span class="bento__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/></svg></span>
+                <div class="bento__heading">
+                  <h3 class="bento__title">200+ Integrations</h3>
+                  <p class="bento__short">Every source, one connector spec.</p>
+                </div>
+                <span class="bento__chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="m19.5 8.25l-7.5 7.5l-7.5-7.5"/></svg></span>
+              </div>
+              <div class="bento__detail" id="d5" role="region"><p>From Postgres and Kafka to Stripe and Salesforce — typed, schema-aware connectors with automatic credential rotation and incremental sync out of the box.</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== HOW IT WORKS ===================== -->
+      <section class="section" id="how" aria-labelledby="how-title">
+        <div class="container">
+          <div class="section__head" data-reveal>
+            <span class="kicker">How it works</span>
+            <h2 class="section__title" id="how-title">From source to insight in <span class="accent">three moves.</span></h2>
+            <p class="section__lede">No glue code, no cron jobs, no 3am pages. Aven runs the whole loop for you.</p>
+          </div>
+          <div class="steps" data-reveal>
+            <article class="step">
+              <p class="step__n"></p>
+              <span class="step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/></svg></span>
+              <h3 class="step__title">Connect</h3>
+              <p class="step__text">Point Aven at any source. 200+ typed connectors authenticate, profile and map your schema in minutes.</p>
+              <span class="step__line" aria-hidden="true"></span>
+            </article>
+            <article class="step">
+              <p class="step__n"></p>
+              <span class="step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93c.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204c.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78c-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107c-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93c-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204c-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78c.165-.398.143-.854-.107-1.204l-.527-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107c.397-.165.71-.505.78-.929l.15-.894Z"/><path d="M15 12a3 3 0 1 1-6 0a3 3 0 0 1 6 0Z"/></svg></span>
+              <h3 class="step__title">Automate</h3>
+              <p class="step__text">Autonomous pipelines transform, validate and heal themselves as your data and schemas drift.</p>
+              <span class="step__line" aria-hidden="true"></span>
+            </article>
+            <article class="step">
+              <p class="step__n"></p>
+              <span class="step__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 0 1 5.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/></svg></span>
+              <h3 class="step__title">Ship</h3>
+              <p class="step__text">Governed metrics, models and dashboards ship to every tool in your stack — in real time.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== FEATURE 1: PRICING ===================== -->
+      <section class="section" id="pricing" aria-labelledby="pricing-title">
+        <div class="container">
+          <div class="section__head" data-reveal style="text-align:center;margin-inline:auto">
+            <span class="kicker" style="justify-content:center">Pricing</span>
+            <h2 class="section__title" id="pricing-title">Scale-ready pricing,<br /><span class="accent">three currencies.</span></h2>
+            <p class="section__lede" style="margin-inline:auto">Switch billing cycle and currency live — every figure is computed from a pricing matrix, never hardcoded. Annual saves a flat 20%.</p>
+          </div>
+
+          <div id="pricing-app" data-reveal>
+            <div class="pricing__controls" role="group" aria-label="Pricing options">
+              <div class="switch" role="radiogroup" aria-label="Billing cycle">
+                <button class="switch__btn is-active" role="radio" aria-checked="true"  data-billing="monthly">Monthly</button>
+                <button class="switch__btn"           role="radio" aria-checked="false" data-billing="annual">Annual
+                  <span class="switch__save">–20%
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.5 15.75l7.5-7.5l7.5 7.5"/></svg>
+                  </span>
+                </button>
+                <span class="switch__thumb" aria-hidden="true"></span>
+              </div>
+              <div class="seg" role="radiogroup" aria-label="Currency">
+                <button class="seg__btn is-active" role="radio" aria-checked="true"  data-currency="USD">$ USD</button>
+                <button class="seg__btn"           role="radio" aria-checked="false" data-currency="INR">₹ INR</button>
+                <button class="seg__btn"           role="radio" aria-checked="false" data-currency="EUR">€ EUR</button>
+                <span class="seg__thumb" aria-hidden="true"></span>
+              </div>
+            </div>
+
+            <div class="pricing__grid">
+              <!-- Starter -->
+              <article class="tier" data-tier="starter">
+                <header class="tier__head">
+                  <h3 class="tier__name">Starter</h3>
+                  <p class="tier__tagline">For solo builders shipping their first pipelines.</p>
+                </header>
+                <p class="tier__price"><span class="tier__symbol" data-price-symbol="starter"></span><span class="tier__value" data-price-value="starter"></span><span class="tier__suffix" data-price-suffix="starter"></span></p>
+                <a class="tier__cta" href="#cta">Start free trial</a>
+                <ul class="tier__features">
+                  <li class="tier__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m8.25 4.5l7.5 7.5l-7.5 7.5"/></svg><span>3 active data pipelines</span></li>
+                  <li class="tier__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m8.25 4.5l7.5 7.5l-7.5 7.5"/></svg><span>50K rows / month synced</span></li>
+                  <li class="tier__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m8.25 4.5l7.5 7.5l-7.5 7.5"/></svg><span>Community connectors</span></li>
+                  <li class="tier__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m8.25 4.5l7.5 7.5l-7.5 7.5"/></svg><span>Daily batch scheduling</span></li>
+                </ul>
+              </article>
+
+              <!-- Growth (featured) -->
+              <article class="tier tier--featured" data-tier="growth">
+                <span class="tier__badge">Most popular</span>
+                <header class="tier__head">
+                  <h3 class="tier__name">Growth</h3>
+                  <p class="tier__tagline">For teams automating production data flows.</p>
+                </header>
+                <p class="tier__price"><span class="tier__symbol" data-price-symbol="growth"></span><span class="tier__value" data-price-value="growth"></span><span class="tier__suffix" data-price-suffix="growth"></span></p>
+                <a class="tier__cta tier__cta--solid" href="#cta">Start free trial</a>
+                <ul class="tier__features">
+                  <li class="tier__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m8.25 4.5l7.5 7.5l-7.5 7.5"/></svg><span>Unlimited pipelines</span></li>
+                  <li class="tier__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m8.25 4.5l7.5 7.5l-7.5 7.5"/></svg><span>10M rows / month synced</span></li>
+                  <li class="tier__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m8.25 4.5l7.5 7.5l-7.5 7.5"/></svg><span>200+ premium connectors</span></li>
+                  <li class="tier__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m8.25 4.5l7.5 7.5l-7.5 7.5"/></svg><span>Real-time CDC streaming</span></li>
+                  <li class="tier__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m8.25 4.5l7.5 7.5l-7.5 7.5"/></svg><span>Predictive anomaly alerts</span></li>
+                </ul>
+              </article>
+
+              <!-- Enterprise -->
+              <article class="tier" data-tier="enterprise">
+                <header class="tier__head">
+                  <h3 class="tier__name">Enterprise</h3>
+                  <p class="tier__tagline">For orgs with compliance &amp; scale demands.</p>
+                </header>
+                <p class="tier__price"><span class="tier__symbol" data-price-symbol="enterprise"></span><span class="tier__value" data-price-value="enterprise"></span><span class="tier__suffix" data-price-suffix="enterprise"></span></p>
+                <a class="tier__cta" href="#cta">Talk to sales</a>
+                <ul class="tier__features">
+                  <li class="tier__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m8.25 4.5l7.5 7.5l-7.5 7.5"/></svg><span>Everything in Growth</span></li>
+                  <li class="tier__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m8.25 4.5l7.5 7.5l-7.5 7.5"/></svg><span>Unlimited rows synced</span></li>
+                  <li class="tier__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m8.25 4.5l7.5 7.5l-7.5 7.5"/></svg><span>Dedicated warehouse cluster</span></li>
+                  <li class="tier__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m8.25 4.5l7.5 7.5l-7.5 7.5"/></svg><span>SOC 2 + SSO + audit logs</span></li>
+                  <li class="tier__feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m8.25 4.5l7.5 7.5l-7.5 7.5"/></svg><span>24/7 solution engineering</span></li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== SOCIAL PROOF ===================== -->
+      <section class="section" id="customers" aria-labelledby="customers-title">
+        <div class="container">
+          <div class="section__head" data-reveal>
+            <span class="kicker">Social proof</span>
+            <h2 class="section__title" id="customers-title">Trusted by data teams<br />shipping at <span class="accent">scale.</span></h2>
+          </div>
+        </div>
+
+        <div class="marquee" aria-hidden="true">
+          <div class="marquee__track">
+            <span class="marquee__item">FINTECH</span><span class="marquee__item">HEALTH</span><span class="marquee__item">LOGISTICS</span><span class="marquee__item">COMMERCE</span><span class="marquee__item">SAAS</span><span class="marquee__item">AI&nbsp;INFRA</span>
+            <span class="marquee__item">FINTECH</span><span class="marquee__item">HEALTH</span><span class="marquee__item">LOGISTICS</span><span class="marquee__item">COMMERCE</span><span class="marquee__item">SAAS</span><span class="marquee__item">AI&nbsp;INFRA</span>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="case-grid" data-reveal>
+            <article class="case">
+              <span class="case__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M16.023 9.348h4.992M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"/></svg></span>
+              <p class="case__metric">94%</p>
+              <p class="case__label">less pipeline maintenance</p>
+              <p class="case__org">Logistics · fleet telemetry</p>
+            </article>
+            <article class="case">
+              <span class="case__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 0 1 5.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/></svg></span>
+              <p class="case__metric">8×</p>
+              <p class="case__label">faster time-to-insight</p>
+              <p class="case__org">Commerce · demand models</p>
+            </article>
+            <article class="case">
+              <span class="case__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z"/><path d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z"/></svg></span>
+              <p class="case__metric">12ms</p>
+              <p class="case__label">p50 sync latency</p>
+              <p class="case__org">Fintech · realtime ledgers</p>
+            </article>
+            <article class="case">
+              <span class="case__icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8.372 1.349a.75.75 0 0 0-.744 0l-4.81 2.748L8 7.131l5.182-3.034zM14 5.357L8.75 8.43v6.005l4.872-2.784A.75.75 0 0 0 14 11zm-6.75 9.078V8.43L2 5.357V11c0 .27.144.518.378.651z"/></svg></span>
+              <p class="case__metric">Zero</p>
+              <p class="case__label">data loss, exactly-once</p>
+              <p class="case__org">Health · clinical pipelines</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== CTA ===================== -->
+      <section class="section" id="cta" aria-labelledby="cta-title">
+        <div class="container">
+          <div class="cta-band cta-band--split" data-reveal>
+            <div class="cta-band__left">
+              <h2 class="cta-band__title" id="cta-title">Put your data<br />on <span class="hl">autopilot.</span></h2>
+              <p class="cta-band__sub">Start free in minutes. No credit card, no pipeline babysitting — just insight.</p>
+            </div>
+            <div class="cta-band__right">
+              <div class="cta-band__actions">
+                <a class="btn btn--solid" href="#top">
+                  Start free trial
+                  <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8.25 4.5l7.5 7.5l-7.5 7.5"/></svg>
+                </a>
+                <a class="btn btn--ghost" href="#pricing">View pricing</a>
+              </div>
+              <div class="cta-preview" aria-hidden="true">
+                <div class="cta-preview__bar"><span></span><span></span><span></span><em>aven · pipeline.log</em></div>
+                <pre class="cta-preview__body"><span class="ln-ok">✔ source.postgres   connected</span>
+<span class="ln-ok">✔ schema.detect     mapped 142 cols</span>
+<span class="ln-run">↻ sync.stream     <b>12ms p50</b> · exactly-once</span>
+<span class="ln-mut">› warehouse.ship    realtime → BI</span></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer" aria-labelledby="footer-brand">
+      <div class="container">
+        <div class="footer__top">
+          <div style="max-width:18rem">
+            <a class="brand" id="footer-brand" href="#top">
+              <svg class="brand__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 27 16 5 27 27" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 18H22" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="16" cy="5" r="3.4" fill="#FFC801"/></svg>
+              AVEN
+            </a>
+            <p style="color:var(--text-dim);margin-top:1rem;font-size:.92rem">The AI data automation platform. Ship insight, not infrastructure.</p>
+            <p style="margin-top:1.2rem">
+              <a href="#top" style="display:inline-flex;align-items:center;gap:.5rem;color:var(--mint);font-family:var(--mono);font-size:.8rem">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/></svg>
+                status.aven.io · operational
+              </a>
+            </p>
+          </div>
+          <nav class="footer__cols" aria-label="Footer">
+            <div class="footer__col"><h4>Product</h4><a href="#features">Platform</a><a href="#pricing">Pricing</a><a href="#customers">Customers</a><a href="#cta">Changelog</a></div>
+            <div class="footer__col"><h4>Company</h4><a href="#top">About</a><a href="#top">Careers</a><a href="#top">Blog</a><a href="#top">Contact</a></div>
+            <div class="footer__col"><h4>Resources</h4><a href="#top">Docs</a><a href="#top">API</a><a href="#top">Guides</a><a href="#top">Security</a></div>
+            <div class="footer__col"><h4>Legal</h4><a href="#top">Privacy</a><a href="#top">Terms</a><a href="#top">DPA</a><a href="#top">SOC 2</a></div>
+          </nav>
+        </div>
+        <div class="footer__bottom">
+          <span>© <span id="year">2026</span> Aven Labs. All rights reserved.</span>
+          <a href="#top" style="display:inline-flex;align-items:center;gap:.4rem">
+            Back to top
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.5 15.75l7.5-7.5l7.5 7.5"/></svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

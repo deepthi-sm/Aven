@@ -1,0 +1,15 @@
+# reference / scratch (never shipped)
+_ref_demo.mp4
+_scratch/
+_scratch_server.cjs
+assets/og/logos-preview.html
+*.log
+
+# os / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# node (none used at runtime, but just in case)
+node_modules/

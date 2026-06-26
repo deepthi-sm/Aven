@@ -89,6 +89,11 @@ function init() {
   initParallax();
   runEntryOrchestration();
 
+  // marquee direction controls (chevron-left / chevron-right)
+  const marquee = $('.marquee');
+  $('#mq-prev')?.addEventListener('click', () => marquee?.classList.add('marquee--rev'));
+  $('#mq-next')?.addEventListener('click', () => marquee?.classList.remove('marquee--rev'));
+
   const yr = $('#year');
   if (yr) yr.textContent = String(new Date().getFullYear());
 

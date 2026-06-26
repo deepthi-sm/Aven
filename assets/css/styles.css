@@ -52,12 +52,14 @@
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
   font-family:var(--sans);color:var(--text);font-size:16px;line-height:1.6;overflow-x:hidden;
-  background:
-    radial-gradient(120% 80% at 50% -10%, #1e3845 0%, transparent 52%),
-    linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
-  background-attachment:fixed;
+  background-color:#172B36;          /* hard dark fallback (iOS Safari safe) */
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
 }
+/* fixed gradient backdrop without background-attachment (mobile-safe) */
+body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(120% 80% at 50% -10%, #1e3845 0%, transparent 52%),
+    linear-gradient(180deg, #172B36 0%, #0F1720 100%);}
 img,svg{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;cursor:pointer;background:none;border:none}
@@ -141,6 +143,45 @@ ul{list-style:none;padding:0}
 .brand{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--mono);font-weight:800;
   letter-spacing:.2em;font-size:1rem}
 .brand__mark{width:26px;height:26px;flex:0 0 auto}
+
+/* ---- PROVIDED SVG PACK (assets/icons/*) referenced via mask so each file is
+   actually used and inherits currentColor for gold/white theming ---- */
+.svgi{display:inline-block;width:1.1em;height:1.1em;background:currentColor;flex:0 0 auto;vertical-align:middle;
+  -webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain;
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.svgi--search{-webkit-mask-image:url("../icons/search.svg");mask-image:url("../icons/search.svg")}
+.svgi--chevron-down{-webkit-mask-image:url("../icons/chevron-down.svg");mask-image:url("../icons/chevron-down.svg")}
+.svgi--chevron-up{-webkit-mask-image:url("../icons/chevron-up.svg");mask-image:url("../icons/chevron-up.svg")}
+.svgi--chevron-up-solid{-webkit-mask-image:url("../icons/chevron-up-solid.svg");mask-image:url("../icons/chevron-up-solid.svg")}
+.svgi--chevron-left{-webkit-mask-image:url("../icons/chevron-left.svg");mask-image:url("../icons/chevron-left.svg")}
+.svgi--chevron-right{-webkit-mask-image:url("../icons/chevron-right.svg");mask-image:url("../icons/chevron-right.svg")}
+.svgi--x-mark{-webkit-mask-image:url("../icons/x-mark.svg");mask-image:url("../icons/x-mark.svg")}
+.svgi--cog{-webkit-mask-image:url("../icons/cog-8-tooth.svg");mask-image:url("../icons/cog-8-tooth.svg")}
+.svgi--arrow-path{-webkit-mask-image:url("../icons/arrow-path.svg");mask-image:url("../icons/arrow-path.svg")}
+.svgi--chart-pie{-webkit-mask-image:url("../icons/chart-pie.svg");mask-image:url("../icons/chart-pie.svg")}
+.svgi--trending{-webkit-mask-image:url("../icons/arrow-trending-up.svg");mask-image:url("../icons/arrow-trending-up.svg")}
+.svgi--link{-webkit-mask-image:url("../icons/link.svg");mask-image:url("../icons/link.svg")}
+.svgi--link-solid{-webkit-mask-image:url("../icons/link-solid.svg");mask-image:url("../icons/link-solid.svg")}
+.svgi--cube{-webkit-mask-image:url("../icons/cube-16-solid.svg");mask-image:url("../icons/cube-16-solid.svg")}
+/* context sizing */
+.bento__icon .svgi{width:22px;height:22px}
+.nav__icon .svgi{width:18px;height:18px}
+.nav__burger .svgi{width:22px;height:22px}
+.btn .svgi,.btn .ic.svgi{width:17px;height:17px}
+.bento__chev .svgi{width:20px;height:20px}
+.switch__save .svgi{width:11px;height:11px}
+.footer .svgi{width:16px;height:16px}
+.mq-btn .svgi{width:16px;height:16px}
+/* marquee controls */
+.marquee-ctrl{display:inline-flex;gap:.5rem;margin-top:1.2rem}
+.mq-btn{display:inline-grid;place-items:center;width:38px;height:38px;border:1px solid var(--line);
+  border-radius:var(--radius-pill);color:var(--text-dim);
+  transition:color var(--t-micro) var(--ease-micro),border-color var(--t-micro) var(--ease-micro),transform var(--t-micro) var(--ease-micro)}
+.mq-btn:hover{color:var(--forsythia);border-color:var(--line-2);transform:translateY(-2px)}
+/* mobile close icon (x-mark) swap */
+.nav__burger .nav__close{display:none}
+.nav.is-open .nav__burger svg{display:none}
+.nav.is-open .nav__burger .nav__close{display:inline-block}
 
 /* buttons */
 .btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.92rem;
@@ -434,6 +475,7 @@ body.is-loaded .hl::after{transform:scaleX(1);transition-delay:300ms}
           mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent)}
 .marquee__track{display:inline-flex;gap:3.5rem;white-space:nowrap;will-change:transform;animation:marquee 30s linear infinite}
 .marquee:hover .marquee__track{animation-play-state:paused}
+.marquee--rev .marquee__track{animation-direction:reverse}
 .marquee__item{font-family:var(--mono);font-weight:700;letter-spacing:.16em;font-size:1rem;color:var(--text-faint);
   transition:color var(--t-micro)}
 .marquee__item:hover{color:var(--text-dim)}

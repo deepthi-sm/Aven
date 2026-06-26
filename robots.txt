@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aven-platform.example.com/sitemap.xml
+Sitemap: https://deepthi-sm.github.io/Aven/sitemap.xml

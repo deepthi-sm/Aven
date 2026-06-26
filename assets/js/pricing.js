@@ -78,7 +78,7 @@ function animateValue(r, target) {
   if (r.raf) cancelAnimationFrame(r.raf);
   r.value.animate(
     [{ opacity: 0.5, transform: 'translateY(-5px)' }, { opacity: 1, transform: 'translateY(0)' }],
-    { duration: 220, easing: 'cubic-bezier(0,0,.2,1)' }
+    { duration: 180, easing: 'cubic-bezier(0,0,.2,1)' }
   );
   const dur = 420;
   let start = null;

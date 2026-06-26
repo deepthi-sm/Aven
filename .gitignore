@@ -11,5 +11,7 @@ Thumbs.db
 .vscode/
 .idea/
 
-# node (none used at runtime, but just in case)
+# node (sharp used once to rasterize og.png; never shipped)
 node_modules/
+package.json
+package-lock.json

@@ -6,6 +6,7 @@
 import { initPricing, refreshPricingThumbs } from './pricing.js';
 import { initFeatures } from './features.js';
 import { initReveals, initCounters } from './motion.js';
+import { initHeroViz } from './hero-viz.js';
 
 const $ = (s, r = document) => r.querySelector(s);
 
@@ -84,8 +85,13 @@ function init() {
   initReveals();
   initCounters();
   initMagnetic();
-  initParallax();
   runEntryOrchestration();
+
+  // Signature hero visual: lazy, AFTER the page is interactive — never on the
+  // critical load path. Static SVG fallback is already visible.
+  const startViz = () => (window.requestIdleCallback || ((f) => setTimeout(f, 200)))(initHeroViz);
+  if (document.readyState === 'complete') startViz();
+  else window.addEventListener('load', startViz, { once: true });
 
   // marquee direction controls (chevron-left / chevron-right)
   const marquee = $('.marquee');
